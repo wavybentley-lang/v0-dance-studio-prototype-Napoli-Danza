@@ -9,6 +9,7 @@ import { CtaBanner } from "@/components/sections/cta"
 import { GallerySection } from "@/components/sections/gallery"
 import { HeroSection, StatsStrip } from "@/components/sections/hero"
 import { PricingSection, ScheduleSection } from "@/components/sections/schedule-pricing"
+import { TestimonialsSection } from "@/components/sections/testimonials"
 import { FloatingActions } from "@/components/site/floating-actions"
 import { Footer } from "@/components/site/footer"
 import { Navigation } from "@/components/site/navigation"
@@ -71,12 +72,12 @@ export default function DanceStudioTemplate() {
     resize()
 
     const COLORS = [
-      "rgba(212,168,83,ALPHA)",
-      "rgba(192,140,60,ALPHA)",
-      "rgba(232,190,100,ALPHA)",
-      "rgba(180,120,40,ALPHA)",
-      "rgba(255,210,120,ALPHA)",
-      "rgba(160,100,30,ALPHA)",
+      "rgba(192,21,42,ALPHA)",
+      "rgba(139,14,30,ALPHA)",
+      "rgba(212,36,59,ALPHA)",
+      "rgba(160,18,35,ALPHA)",
+      "rgba(220,80,90,ALPHA)",
+      "rgba(100,10,20,ALPHA)",
     ]
 
     const rand = (a: number, b: number) => a + Math.random() * (b - a)
@@ -206,7 +207,7 @@ export default function DanceStudioTemplate() {
       className="min-h-screen bg-background text-foreground"
       style={{
         background:
-          "radial-gradient(circle at 12% 18%, rgba(226, 76, 159, 0.12), transparent 28%), radial-gradient(circle at 88% 42%, rgba(149, 87, 194, 0.14), transparent 32%), var(--background)",
+          "radial-gradient(circle at 12% 18%, rgba(192,21,42,0.10), transparent 28%), radial-gradient(circle at 88% 42%, rgba(139,14,30,0.10), transparent 32%), var(--background)",
       }}
     >
       <Navigation
@@ -218,7 +219,6 @@ export default function DanceStudioTemplate() {
       />
 
       <HeroSection />
-      <StatsStrip />
       <AboutSection
         isVisible={visibleSections.has("chi-siamo")}
         setSectionRef={setSectionRef}
@@ -240,6 +240,7 @@ export default function DanceStudioTemplate() {
         enlargedPhoto={enlargedPhoto}
         setEnlargedPhoto={setEnlargedPhoto}
       />
+      <TestimonialsSection />
       <ContactSection
         isVisible={visibleSections.has("contatti")}
         setSectionRef={setSectionRef}

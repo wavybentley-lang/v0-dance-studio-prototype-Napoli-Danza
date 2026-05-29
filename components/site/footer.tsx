@@ -4,19 +4,21 @@ import { type ReactNode } from "react"
 import { brand, type NavLink } from "@/lib/site-config"
 
 export function Footer({ navLinks }: { navLinks: NavLink[] }) {
-  const footerPhone = "3347927040"
-  const footerPhoneHref = "tel:+393347927040"
-  const footerEmail = "il_sogno@yahoo.com"
-  const footerEmailHref = "mailto:il_sogno@yahoo.com"
+  const footerPhone = "081 012 8718"
+  const footerPhoneHref = "tel:+390810128718"
+  const footerEmail = "infonapolidanza@gmail.com"
+  const footerEmailHref = "mailto:infonapolidanza@gmail.com"
   const footerHours =
-    "Lunedì: 09:00-12:30 / 16:00-20:00\n" +
-    "Martedì: 16:00-20:00\n" +
-    "Mercoledì: 10:30-12:30 / 14:30-20:00\n" +
-    "Giovedì: 09:00-11:00 / 15:00-20:30\n" +
-    "Venerdì: 16:00-20:00"
+    "Lunedì: 3:00PM - 8:30PM\n" +
+    "Martedì: 3:00PM - 8:30PM\n" +
+    "Mercoledì: 3:00PM - 8:30PM\n" +
+    "Giovedì: 3:00PM - 8:30PM\n" +
+    "Venerdì: 3:00PM - 8:30PM\n" +
+    "Sabato: Chiuso\n" +
+    "Domenica: Chiuso"
 
   return (
-    <footer className="relative overflow-hidden border-t border-white/20 bg-[#100B0D] pt-16 pb-12" style={{ background: "linear-gradient(180deg, #1A0510 0%, #0F030A 100%)" }}>
+    <footer className="relative overflow-hidden border-t border-white/20 bg-[#100B0D] pt-16 pb-12" style={{ background: "linear-gradient(180deg, #0A0A0A 0%, #050505 100%)" }}>
       <div className="pointer-events-none absolute left-0 top-0 h-72 w-72 rounded-full bg-[radial-gradient(circle,rgba(216,185,120,0.12)_0%,rgba(158,111,111,0.07)_42%,transparent_72%)] blur-2xl" />
       <div className="pointer-events-none absolute bottom-0 right-0 h-80 w-80 rounded-full bg-[radial-gradient(circle,rgba(185,147,90,0.10)_0%,rgba(28,20,22,0.12)_48%,transparent_74%)] blur-2xl" />
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -25,16 +27,16 @@ export function Footer({ navLinks }: { navLinks: NavLink[] }) {
             <a href="#" className="relative mb-7 flex max-w-[300px] flex-col items-center leading-none md:items-start">
               <span className="pointer-events-none absolute -top-6 h-28 w-64 rounded-full bg-[radial-gradient(circle,rgba(216,185,120,0.16)_0%,rgba(158,111,111,0.08)_38%,transparent_72%)] blur-xl" />
               <span className="relative mb-1.5 border-b border-white/20 pb-1.5 text-[9px] font-semibold tracking-[0.38em] text-white/80 uppercase">
-                SCUOLA DI AVVIAMENTO PROFESSIONALE ALLA DANZA
+                SCUOLA DI DANZA
               </span>
               <span
                 className="relative font-serif text-[2.8rem] leading-[0.82] font-semibold tracking-wide text-[#F7EFE5] italic"
                 style={{ textShadow: "0 0 28px rgba(216,185,120,0.22)" }}
               >
-                Il Sogno
+                Napoli Danza
               </span>
               <span className="relative mt-3 self-center font-serif text-[1.05rem] leading-none text-white/80 italic md:self-end">
-                di Rita Castanò
+                Nata per passione
               </span>
             </a>
             <p className="mt-2 max-w-[280px] text-center text-sm leading-relaxed text-[#F7EFE5]/58 md:text-left">{brand.tagline}</p>

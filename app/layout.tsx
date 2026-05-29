@@ -1,11 +1,11 @@
 import type { Metadata, Viewport } from 'next'
-import { Cormorant_Garamond, Dancing_Script, Jost } from 'next/font/google'
+import { Cormorant_Garamond, Inter, Dancing_Script } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/next'
 import './globals.css'
 
-const jost = Jost({
+const inter = Inter({
   subsets: ['latin'],
-  variable: '--font-jost',
+  variable: '--font-inter',
   display: 'swap',
 })
 
@@ -51,7 +51,7 @@ export const metadata: Metadata = {
     'musical Napoli',
     'Pilates Napoli',
     'danza bambini Napoli',
-    'Via Martiri D’Otranto Napoli',
+    'Via Amato Di Montecassino Napoli',
   ],
   authors: [{ name: siteName }],
   creator: siteName,
@@ -116,7 +116,7 @@ export const metadata: Metadata = {
 }
 
 export const viewport: Viewport = {
-  themeColor: '#D8B978',
+  themeColor: '#C0152A',
   width: 'device-width',
   initialScale: 1,
 }
@@ -127,7 +127,7 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="it" className={`${jost.variable} ${cormorant.variable} ${dancingScript.variable}`}>
+    <html lang="it" className={`${inter.variable} ${cormorant.variable} ${dancingScript.variable}`}>
       <body className="font-sans antialiased" suppressHydrationWarning={true}>
         {children}
         <Analytics />

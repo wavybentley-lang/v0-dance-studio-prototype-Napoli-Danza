@@ -20,7 +20,7 @@ export function ClassesSection({ isVisible, setSectionRef, coursesExpanded, setC
     <section
       id="corsi"
       ref={(element) => setSectionRef("corsi", element)}
-      style={{ background: "radial-gradient(ellipse at 80% 20%, #5C1535 0%, #3D0D26 55%, #2E0A1E 100%)" }}
+      style={{ background: "radial-gradient(ellipse at 80% 20%, #0F0F0F 0%, #080808 60%, #050505 100%)" }}
       className={`py-20 transition-all duration-700 sm:py-28 ${
         isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"
       }`}
@@ -64,6 +64,7 @@ export function ClassesSection({ isVisible, setSectionRef, coursesExpanded, setC
                             src={course.image}
                             alt={course.title}
                             fill
+                            sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
                             className="object-cover transition-transform duration-500 group-hover:scale-105"
                           />
                         ) : (

@@ -1,32 +1,31 @@
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400;1,600&family=Lato:wght@300;400;700&display=swap');
 @import 'tailwindcss';
 @import 'tw-animate-css';
 
 @theme inline {
-  --font-sans: 'Lato', sans-serif;
-  --font-serif: 'Playfair Display', serif;
+  --font-sans: var(--font-inter);
+  --font-serif: var(--font-cormorant);
 }
 
 :root {
-  --background: oklch(0.22 0.08 355);
-  --foreground: oklch(0.96 0.01 355);
-  --card: oklch(0.26 0.09 355);
-  --card-foreground: oklch(0.96 0.01 355);
-  --popover: oklch(0.26 0.09 355);
-  --popover-foreground: oklch(0.96 0.01 355);
-  --primary: oklch(0.98 0.00 0);
-  --primary-foreground: oklch(0.22 0.08 355);
-  --secondary: oklch(0.30 0.09 355);
-  --secondary-foreground: oklch(0.96 0.01 355);
-  --muted: oklch(0.30 0.09 355);
-  --muted-foreground: oklch(0.75 0.04 355);
-  --accent: oklch(0.35 0.10 355);
-  --accent-foreground: oklch(0.96 0.01 355);
+  --background: oklch(0.09 0.00 0);
+  --foreground: oklch(0.96 0.00 0);
+  --card: oklch(0.12 0.00 0);
+  --card-foreground: oklch(0.96 0.00 0);
+  --popover: oklch(0.12 0.00 0);
+  --popover-foreground: oklch(0.96 0.00 0);
+  --primary: oklch(0.42 0.18 25);
+  --primary-foreground: oklch(0.98 0.00 0);
+  --secondary: oklch(0.15 0.00 0);
+  --secondary-foreground: oklch(0.96 0.00 0);
+  --muted: oklch(0.15 0.00 0);
+  --muted-foreground: oklch(0.55 0.00 0);
+  --accent: oklch(0.42 0.18 25);
+  --accent-foreground: oklch(0.98 0.00 0);
   --destructive: oklch(0.577 0.245 27.325);
-  --destructive-foreground: oklch(0.98 0 0);
-  --border: oklch(0.35 0.08 355);
-  --input: oklch(0.35 0.08 355);
-  --ring: oklch(0.98 0.00 0);
+  --destructive-foreground: oklch(0.98 0.00 0);
+  --border: oklch(0.20 0.00 0);
+  --input: oklch(0.20 0.00 0);
+  --ring: oklch(0.42 0.18 25);
   --radius: 0.625rem;
 }
 
@@ -37,11 +36,10 @@
   }
   body {
     background-color: var(--background);
-    background-color: #1A0510;
     color: var(--foreground);
-    font-family: 'Lato', sans-serif;
+    font-family: var(--font-inter), sans-serif;
   }
   h1, h2, h3, h4, h5, h6 {
-    font-family: 'Playfair Display', serif;
+    font-family: var(--font-cormorant), serif;
   }
 }

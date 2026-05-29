@@ -5,6 +5,8 @@ import { X } from "lucide-react"
 
 import { featuredGalleryPhotos } from "@/lib/site-config"
 
+const galleryFallbacks = Array.from({ length: 6 })
+
 type GallerySectionProps = {
   isVisible: boolean
   setSectionRef: (id: string, element: HTMLElement | null) => void
@@ -18,7 +20,7 @@ export function GallerySection({ isVisible, setSectionRef, enlargedPhoto, setEnl
       <section
         id="gallery"
         ref={(element) => setSectionRef("gallery", element)}
-        style={{ background: "radial-gradient(ellipse at 50% 30%, #5C1535 0%, #3D0D26 50%, #250818 100%)" }}
+        style={{ background: "radial-gradient(ellipse at 50% 30%, #0F0F0F 0%, #050505 60%, #080808 100%)" }}
         className={`pt-20 pb-20 transition-all duration-700 sm:pt-28 ${
           isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"
         }`}
@@ -32,22 +34,29 @@ export function GallerySection({ isVisible, setSectionRef, enlargedPhoto, setEnl
           </div>
 
           <div className="grid grid-cols-1 gap-3 sm:grid-cols-3 sm:gap-4">
-            {featuredGalleryPhotos.map((image) => (
-              <button
-                key={image.src}
-                onClick={() => setEnlargedPhoto(image.src)}
-                className="group relative aspect-square w-full cursor-zoom-in overflow-hidden rounded-sm"
-              >
-                <Image
-                  src={image.src}
-                  alt={image.alt}
-                  fill
-                  sizes="(max-width: 640px) 100vw, 33vw"
-                  className="object-cover transition-transform duration-500 group-hover:scale-110"
-                />
-                <div className="absolute inset-0 bg-black/20 transition-colors duration-500 group-hover:bg-black/0" />
-              </button>
-            ))}
+            {featuredGalleryPhotos.length > 0
+              ? featuredGalleryPhotos.map((image) => (
+                  <button
+                    key={image.src}
+                    onClick={() => setEnlargedPhoto(image.src)}
+                    className="group relative aspect-square w-full cursor-zoom-in overflow-hidden rounded-sm"
+                  >
+                    <Image
+                      src={image.src}
+                      alt={image.alt}
+                      fill
+                      sizes="(max-width: 640px) 100vw, 33vw"
+                      className="object-cover transition-transform duration-500 group-hover:scale-110"
+                    />
+                    <div className="absolute inset-0 bg-black/20 transition-colors duration-500 group-hover:bg-black/0" />
+                  </button>
+                ))
+              : galleryFallbacks.map((_, index) => (
+                  <div
+                    key={index}
+                    className="aspect-square w-full rounded-sm border border-primary/15 bg-[linear-gradient(135deg,rgba(120,24,58,0.72),rgba(10,10,10,0.96))]"
+                  />
+                ))}
           </div>
         </div>
       </section>

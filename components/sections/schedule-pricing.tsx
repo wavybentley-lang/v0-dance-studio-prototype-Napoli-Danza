@@ -77,7 +77,7 @@ export function ScheduleSection({ isVisible, setSectionRef }: AnimatedSectionPro
     <section
       id="orari"
       ref={(element) => setSectionRef("orari", element)}
-      style={{ background: "radial-gradient(ellipse at 15% 50%, #2E0A1E 0%, #1A0510 60%, #250818 100%)" }}
+      style={{ background: "radial-gradient(ellipse at 15% 50%, #111111 0%, #080808 60%, #0F0F0F 100%)" }}
       className={`py-20 transition-all duration-700 sm:py-28 ${
         isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"
       }`}
@@ -120,7 +120,7 @@ export function PricingSection({ isVisible, setSectionRef }: AnimatedSectionProp
     <section
       id="prezzi"
       ref={(element) => setSectionRef("prezzi", element)}
-      style={{ background: "radial-gradient(ellipse at 85% 40%, #4A1030 0%, #2E0A1E 60%, #1A0510 100%)" }}
+      style={{ background: "radial-gradient(ellipse at 85% 40%, #161616 0%, #111111 60%, #080808 100%)" }}
       className={`bg-card py-24 transition-all duration-700 ${
         isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"
       }`}

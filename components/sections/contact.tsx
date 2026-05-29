@@ -1,23 +1,21 @@
 "use client"
 
 import { ChevronDown, Mail, MapPin, MessageCircle, Phone } from "lucide-react"
+import Image from "next/image"
 import { type Dispatch, type ReactNode, type SetStateAction, useState } from "react"
 
 import { brand } from "@/lib/site-config"
 
 const courseOptions = [
-  "Danza Classica",
   "Danza Moderna",
-  "Danza Contemporanea",
-  "Modern Dance",
-  "Hip Hop",
-  "Musical",
+  "Hip Hop Kids",
+  "Hip Hop Teen",
+  "Hip Hop Advanced",
   "Pilates",
-  "Gyrokinesis",
-  "PBT",
-  "Danze Latino Americane",
-  "Danze Orientali",
-  "Danze Caraibiche",
+  "Flamenco",
+  "Gioco Danza",
+  "Predanza",
+  "Open Class",
 ]
 
 type ContactSectionProps = {
@@ -48,12 +46,31 @@ export function ContactSection({
     <section
       id="contatti"
       ref={(element) => setSectionRef("contatti", element)}
-      style={{ background: "radial-gradient(ellipse at 30% 70%, #3D0D26 0%, #250818 55%, #1A0510 100%)" }}
-      className={`relative z-10 border-t border-border py-24 transition-all duration-700 ${
+      style={{ background: "radial-gradient(ellipse at 30% 70%, #141414 0%, #0F0F0F 55%, #0A0A0A 100%)" }}
+      className={`relative border-t border-border bg-[#050505] transition-all duration-700 ${
+        courseDropdownOpen ? "z-[10000]" : "z-10"
+      } ${
         isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"
       }`}
     >
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div className="relative overflow-hidden py-24">
+      <Image
+        src="/contactformimage.jpg"
+        alt=""
+        fill
+        sizes="100vw"
+          className="pointer-events-none object-cover object-center opacity-55"
+        style={{ maskImage: "linear-gradient(90deg, transparent 0%, rgba(0,0,0,0.55) 45%, rgba(0,0,0,0.2) 100%)" }}
+        aria-hidden="true"
+      />
+      <div
+        className="pointer-events-none absolute inset-0"
+        style={{
+          background:
+            "linear-gradient(to bottom, rgba(0,0,0,0.35), rgba(0,0,0,0.85) 75%, #050505 100%)",
+        }}
+      />
+      <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="mb-16 px-4 text-left lg:px-0 lg:text-center">
           <h2 className="mb-4 text-left font-serif text-4xl font-bold text-foreground sm:text-5xl md:text-6xl lg:text-center">
             Vuoi provare un <span className="text-primary">corso</span>?
@@ -117,11 +134,11 @@ export function ContactSection({
               <div className="grid gap-6 sm:grid-cols-2">
                 <TextInput id="phone" name="telefono" label="Telefono" placeholder="Il tuo numero" type="tel" hasError={formErrors.telefono} setFormErrors={setFormErrors} />
                 <div>
-                  <label htmlFor="course" className="mb-2 block text-[12px] font-medium tracking-wider text-muted-foreground uppercase">
+                  <label htmlFor="course" className="mb-2 block text-[12px] font-semibold tracking-wider text-white uppercase">
                     Corso di Interesse
                   </label>
                   <div
-                    className="relative"
+                    className="relative z-[10010]"
                     onBlur={(event) => {
                       if (!event.currentTarget.contains(event.relatedTarget as Node | null)) setCourseDropdownOpen(false)
                     }}
@@ -130,8 +147,8 @@ export function ContactSection({
                     <button
                       id="course"
                       type="button"
-                      className="flex w-full items-center justify-between rounded-sm bg-card px-4 py-3 text-left text-foreground shadow-sm shadow-black/20 transition-colors hover:border-primary/60 focus:border-primary focus:outline-none"
-                      style={{ border: `1px solid ${formErrors.corso ? "var(--template-error)" : "var(--border)"}` }}
+                      className="flex w-full items-center justify-between rounded-xl bg-[#0A0A0A] px-4 py-3 text-left text-white shadow-[0_12px_32px_rgba(0,0,0,0.32)] transition-[border-color,box-shadow] hover:border-[#D4AF37]/40 focus:border-[rgba(212,175,55,0.75)] focus:shadow-[0_0_0_3px_rgba(212,175,55,0.12),0_12px_32px_rgba(0,0,0,0.32)] focus:outline-none"
+                      style={{ border: `1px solid ${formErrors.corso ? "var(--template-error)" : "rgba(212,175,55,0.25)"}` }}
                       onClick={() => {
                         setCourseDropdownOpen((open) => !open)
                         setFormErrors((previous) => ({ ...previous, corso: false }))
@@ -139,22 +156,23 @@ export function ContactSection({
                       aria-haspopup="listbox"
                       aria-expanded={courseDropdownOpen}
                     >
-                      <span className={selectedCourse ? "text-foreground" : "text-muted-foreground"}>{selectedCourse || "Seleziona un corso"}</span>
+                      <span className={selectedCourse ? "text-white" : "text-white/60"}>{selectedCourse || "Seleziona un corso"}</span>
                       <ChevronDown
                         size={16}
-                        className={`ml-3 shrink-0 text-primary/75 transition-transform ${courseDropdownOpen ? "rotate-180" : ""}`}
+                        className={`ml-3 shrink-0 text-[#D4AF37] transition-transform ${courseDropdownOpen ? "rotate-180" : ""}`}
                       />
                     </button>
                     {courseDropdownOpen && (
                       <div
-                        className="absolute right-0 left-0 z-30 mt-2 overflow-hidden rounded-sm border border-border bg-card shadow-2xl shadow-black/50"
+                        className="absolute right-0 left-0 z-[10020] mt-2 overflow-hidden rounded-xl bg-[#0A0A0A] shadow-[0_22px_60px_rgba(0,0,0,0.72)]"
+                        style={{ border: "1px solid rgba(212,175,55,0.25)" }}
                         role="listbox"
                       >
                         {courseOptions.map((course) => (
                           <button
                             key={course}
                             type="button"
-                            className="block w-full border-b border-border px-4 py-3 text-left text-sm font-medium text-foreground transition-colors last:border-b-0 hover:bg-secondary focus:bg-secondary focus:outline-none"
+                            className="block min-h-12 w-full border-b border-[rgba(212,175,55,0.15)] bg-[#0A0A0A] px-4 py-3 text-left text-sm font-semibold tracking-wide text-white transition-colors duration-200 last:border-b-0 hover:bg-[rgba(212,175,55,0.14)] hover:text-white focus:bg-[rgba(212,175,55,0.14)] focus:text-white focus:outline-none"
                             onClick={() => {
                               setSelectedCourse(course)
                               setCourseDropdownOpen(false)
@@ -172,14 +190,15 @@ export function ContactSection({
                 </div>
               </div>
               <div>
-                <label htmlFor="message" className="mb-2 block text-[12px] font-medium tracking-wider text-muted-foreground uppercase">
+                <label htmlFor="message" className="mb-2 block text-[12px] font-semibold tracking-wider text-white uppercase">
                   Messaggio
                 </label>
                 <textarea
                   id="message"
                   name="messaggio"
                   rows={4}
-                  className="w-full resize-none rounded-sm border border-border bg-card px-4 py-3 text-foreground transition-colors placeholder:text-muted-foreground focus:border-primary focus:outline-none"
+                  className="w-full resize-none rounded-xl border bg-[#0A0A0A] px-4 py-3 text-white shadow-[0_12px_32px_rgba(0,0,0,0.28)] transition-[border-color,box-shadow] placeholder:text-[rgba(255,255,255,0.55)] focus:border-[rgba(212,175,55,0.75)] focus:shadow-[0_0_0_3px_rgba(212,175,55,0.12),0_12px_32px_rgba(0,0,0,0.28)] focus:outline-none"
+                  style={{ borderColor: "rgba(212,175,55,0.25)" }}
                   placeholder="Raccontaci di te..."
                 />
               </div>
@@ -210,21 +229,24 @@ export function ContactSection({
                   <MapPin className="mt-1 h-6 w-6 flex-shrink-0 text-primary" />
                   <div>
                     <div className="mb-2 font-semibold text-foreground">Indirizzo</div>
-                    <div className="text-foreground">Via Martiri D&apos;Otranto, 98/a, 80141 Napoli</div>
+                    <div className="text-foreground">Via Amato Di Montecassino, 10/b - zona Materdei, Naples, Italy, 80136</div>
                   </div>
                 </div>
                 <ContactLink href={brand.phoneHref} icon={<Phone className="mt-1 h-6 w-6 flex-shrink-0 text-primary transition-transform group-hover:scale-110" />} label="Telefono" value={brand.phone} />
                 <ContactLink href={brand.emailHref} icon={<Mail className="mt-1 h-6 w-6 flex-shrink-0 text-primary transition-transform group-hover:scale-110" />} label="Email" value={brand.email} />
-                <ContactLink href={brand.whatsappHref} icon={<MessageCircle className="mt-1 h-6 w-6 flex-shrink-0 text-primary transition-transform group-hover:scale-110" />} label="WhatsApp" value="Risposta rapida per prove e informazioni" />
+                <ContactLink href={brand.whatsappHref} icon={<MessageCircle className="mt-1 h-6 w-6 flex-shrink-0 text-primary transition-transform group-hover:scale-110" />} label="WhatsApp" value="+39 081 012 8718" />
               </div>
             </div>
           </div>
         </div>
-        <div className="mt-16">
+        </div>
+      </div>
+      <div className="relative z-10 bg-[#050505] py-20">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <h3 className="mb-6 font-serif text-2xl font-bold text-foreground">Dove Siamo</h3>
           <div className="aspect-video w-full overflow-hidden rounded-sm border border-border md:aspect-[21/9]">
             <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3017.602798326943!2d14.2701137!3d40.85864369999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x133b0984bd736c2b%3A0x1aa6c0f23ef5d4c8!2sIl%20Sogno%20-%20Scuola%20di%20Danza%20Napoli!5e0!3m2!1sen!2sit!4v1779986319289!5m2!1sen!2sit"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3017.7827295552984!2d14.244352099999999!3d40.8546938!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x133b0860b9115ff1%3A0x37c258254b4d49b4!2sNapoli%20Danza%20a.s.d.!5e0!3m2!1sen!2sit!4v1780071496851!5m2!1sen!2sit"
               width="100%"
               height="100%"
               style={{ border: 0 }}
@@ -258,15 +280,15 @@ function TextInput({
 }) {
   return (
     <div>
-      <label htmlFor={id} className="mb-2 block text-[12px] font-medium tracking-wider text-muted-foreground uppercase">
+      <label htmlFor={id} className="mb-2 block text-[12px] font-semibold tracking-wider text-white uppercase">
         {label}
       </label>
       <input
         type={type}
         id={id}
         name={name}
-        className="w-full rounded-sm bg-card px-4 py-3 text-foreground transition-colors placeholder:text-muted-foreground focus:border-primary focus:outline-none"
-        style={{ border: `1px solid ${hasError ? "var(--template-error)" : "var(--border)"}` }}
+        className="w-full rounded-xl bg-[#0A0A0A] px-4 py-3 text-white shadow-[0_12px_32px_rgba(0,0,0,0.28)] transition-[border-color,box-shadow] placeholder:text-[rgba(255,255,255,0.55)] focus:border-[rgba(212,175,55,0.75)] focus:shadow-[0_0_0_3px_rgba(212,175,55,0.12),0_12px_32px_rgba(0,0,0,0.28)] focus:outline-none"
+        style={{ border: `1px solid ${hasError ? "var(--template-error)" : "rgba(212,175,55,0.25)"}` }}
         onFocus={() => setFormErrors((previous) => ({ ...previous, [name]: false }))}
         placeholder={placeholder}
       />
