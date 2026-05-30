@@ -24,11 +24,11 @@ const dancingScript = Dancing_Script({
   display: 'swap',
 })
 
-const siteUrl = 'https://v0-il-sogno-prototype.vercel.app'
-const siteName = 'Il Sogno di Rita Castanò'
-const siteTitle = 'Il Sogno di Rita Castanò | Scuola di danza a Napoli'
+const siteUrl = 'https://v0-dance-studio-prototype.vercel.app'
+const siteName = 'Napoli Danza'
+const siteTitle = 'Napoli Danza | Scuola di danza a Napoli'
 const siteDescription =
-  'Scuola di danza a Napoli per bambini, ragazzi e adulti. Corsi di danza classica, moderna, hip hop, flamenco, gioco danza, predanza, Pilates e open class.'
+  'Napoli Danza e una scuola di danza a Napoli per bambini, ragazzi e adulti. Corsi di danza classica, moderna, hip hop, flamenco, gioco danza, predanza, Pilates e open class.'
 const ogImage = `${siteUrl}/OGIMAGE.jpg`
 
 export const metadata: Metadata = {
@@ -40,8 +40,7 @@ export const metadata: Metadata = {
   },
   description: siteDescription,
   keywords: [
-    'Il Sogno di Rita Castanò',
-    'Rita Castanò',
+    'Napoli Danza',
     'scuola di danza Napoli',
     'accademia danza Napoli',
     'danza classica Napoli',
@@ -73,7 +72,7 @@ export const metadata: Metadata = {
         secureUrl: ogImage,
         width: 1200,
         height: 630,
-        alt: `${siteName} - Scuola di danza a Napoli`,
+        alt: 'Napoli Danza - Scuola di danza a Napoli',
         type: 'image/jpeg',
       },
     ],
@@ -87,7 +86,7 @@ export const metadata: Metadata = {
     images: [
       {
         url: ogImage,
-        alt: `${siteName} - Scuola di danza a Napoli`,
+        alt: 'Napoli Danza - Scuola di danza a Napoli',
       },
     ],
   },
