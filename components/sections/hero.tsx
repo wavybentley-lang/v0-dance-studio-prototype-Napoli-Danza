@@ -46,7 +46,7 @@ export function HeroSection() {
 
       <div className="relative z-10 ml-0 max-w-7xl px-4 pt-32 pb-24 text-left sm:px-6 sm:pt-36 sm:pb-28 lg:mx-auto lg:w-1/2 lg:px-8 lg:py-0">
         <h1 className="animate-fade-in-up mb-6 text-left font-serif text-5xl leading-[0.96] font-bold text-balance text-[#F5F5F5] italic sm:text-6xl md:text-7xl lg:text-8xl">
-          Ogni grande ballerino nasce da un <span className="text-[#C0152A]">sogno.</span>
+          Ogni grande ballerino nasce da un <span className="text-[#F5F5F5]">sogno.</span>
         </h1>
         <p className="animate-fade-in-up animate-delay-200 mb-10 max-w-none text-lg leading-relaxed font-light text-pretty text-[#B8B8B8] sm:text-xl lg:max-w-xl lg:text-2xl">
           Formiamo giovani talenti attraverso disciplina, eleganza e passione per la danza.
