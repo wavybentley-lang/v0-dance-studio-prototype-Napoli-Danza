@@ -29,7 +29,7 @@ const siteName = 'Il Sogno di Rita Castanò'
 const siteTitle = 'Il Sogno di Rita Castanò | Scuola di danza a Napoli'
 const siteDescription =
   'Scuola di danza a Napoli per bambini, ragazzi e adulti. Corsi di danza classica, moderna, hip hop, flamenco, gioco danza, predanza, Pilates e open class.'
-const ogImage = `${siteUrl}/ogimage.jpg`
+const ogImage = `${siteUrl}/OGIMAGE.jpg`
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
