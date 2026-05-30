@@ -24,7 +24,7 @@ const dancingScript = Dancing_Script({
   display: 'swap',
 })
 
-const siteUrl = 'https://v0-dance-studio-prototype.vercel.app'
+const siteUrl = 'https://v0-dance-studio-prototype-napoli-da-seven.vercel.app'
 const siteName = 'Napoli Danza'
 const siteTitle = 'Napoli Danza | Scuola di danza a Napoli'
 const siteDescription =
